@@ -10,81 +10,54 @@
 
 <style>
 /* ================= ROOT ================= */
-:root{
-  --primary:#1f8a8a;
-  --bg:#ffffff;
-  --text:#0f172a;
-  --muted:#64748b;
-  --card:#f8fafc;
-  --border:#e5e7eb;
-  --shadow:0 20px 40px rgba(0,0,0,.08);
+
+
+/* ================= NAVBAR ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI, sans-serif;
 }
 
-/* ================= BASE ================= */
-*{margin:0;padding:0;box-sizing:border-box}
+/* ================= BODY ================= */
 body{
-  font-family:Inter,system-ui,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.7;
-  overflow-x:hidden;
-}
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:0 20px;
-}
-
-/* ================= CURSOR ================= */
-.cursor{
-  position:fixed;
-  width:28px;
-  height:28px;
-  border:2px solid var(--primary);
-  border-radius:50%;
-  pointer-events:none;
-  transform:translate(-50%,-50%);
-  transition:.15s;
-  z-index:9999;
+  background:#ffffff;
+  color:#000;
+  padding:40px 70px;
 }
 
 /* ================= NAVBAR ================= */
 header{
-  position:fixed;
-  top:0;
-  width:100%;
-  background:#fff;
-  border-bottom:1px solid var(--border);
-  z-index:1000;
-}
-nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:16px 0;
-}
-.logo{
-  font-weight:700;
-  color:var(--primary);
-}
-nav ul{
-  list-style:none;
-  display:flex;
-  gap:10px;
-}
-nav a{
-  text-decoration:none;
-  color:var(--text);
-  padding:8px 16px;
-  border-radius:20px;
-  transition:.3s;
-}
-nav a.active,
-nav a:hover{
-  background:#e6f6f6;
-  color:var(--primary);
 }
 
+.logo{
+  font-weight:700;
+  color:#1b8f8f;
+}
+
+nav{
+  background:#f4fafa;
+  padding:10px 18px;
+  border-radius:30px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#000;
+  margin:0 10px;
+  font-size:14px;
+}
+
+nav a.active{
+  background:#1b8f8f;
+  color:#fff;
+  padding:6px 14px;
+  border-radius:20px;
+}
 /* ================= REVEAL ================= */
 .reveal{
   opacity:0;
@@ -179,6 +152,186 @@ footer{
   .title{font-size:34px}
   .cta{flex-direction:column;gap:20px;text-align:center}
 }
+
+
+
+
+
+/* ================= CONTACT ================= */
+.contact-box{
+  margin-top:120px;
+  background:#1f8f92;
+  color:#fff;
+  padding:60px 80px;
+  border-radius:22px;
+  width:100%;
+}
+
+.work-badge{
+  display:inline-block;
+  background:#2aa5a8;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:12px;
+  letter-spacing:0.5px;
+}
+
+.contact-box h2{
+  margin-top:20px;
+  font-size:48px;
+  line-height:1.2;
+  font-weight:700;
+}
+
+.contact-box h2 span{
+  font-weight:400;
+  opacity:0.9;
+}
+
+.sub-text{
+  margin-top:18px;
+  font-size:16px;
+  opacity:0.9;
+}
+
+.email-link{
+  display:block;
+  margin-top:28px;
+  font-size:18px;
+  color:#fff;
+  text-decoration:underline;
+  font-weight:500;
+}
+
+.mail-btn{
+  display:inline-block;
+  margin-top:18px;
+  background:#fff;
+  color:#1f8f92;
+  padding:10px 22px;
+  border-radius:8px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.mail-btn:hover{
+  background:#e6f7f7;
+}
+
+/* Floating Icon */
+#message-btn{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:55px;
+  height:55px;
+  background:#1f8f92;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  cursor:pointer;
+  z-index:999;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+/* Modal Background */
+#message-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+
+/* Modal Box (CENTERED) */
+.modal-box{
+  background:#1f8f92;
+  color:#fff;
+  width:360px;
+  max-width:90%;
+  padding:30px;
+  border-radius:18px;
+  position:relative;
+  animation:scaleIn .25s ease;
+}
+
+@keyframes scaleIn{
+  from{transform:scale(.85);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+.modal-box h2{
+  margin-bottom:18px;
+}
+
+.modal-box label{
+  font-size:13px;
+}
+
+.modal-box input,
+.modal-box textarea{
+  width:100%;
+  margin:6px 0 14px;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  outline:none;
+}
+
+.modal-box textarea{
+  height:80px;
+  resize:none;
+}
+
+.modal-box button{
+  width:100%;
+  padding:12px;
+  background:#fff;
+  color:#1f8f92;
+  border:none;
+  border-radius:30px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* Close */
+.close-btn{
+  position:absolute;
+  top:14px;
+  right:14px;
+  cursor:pointer;
+}
+
+/* =======folloting message======== */
+/* Success Toast */
+#success-toast{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:#1f8f92;
+  color:#fff;
+  padding:14px 22px;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:500;
+  display:none;
+  z-index:2000;
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+  animation:slideIn .3s ease;
+}
+
+@keyframes slideIn{
+  from{transform:translateX(100%);opacity:0}
+  to{transform:translateX(0);opacity:1}
+}
 </style>
 </head>
 
@@ -186,18 +339,14 @@ footer{
 
 <div class="cursor"></div>
 
-<!-- ================= HEADER ================= -->
+<!-- NAV -->
 <header>
-  <div class="container">
-    <nav>
-      <div class="logo">Raj</div>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a class="active" href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-      </ul>
-    </nav>
-  </div>
+  <div class="logo">RAJ</div>
+  <nav>
+    <a  href="index.html">Home</a>
+    <a class="active" href="#">About</a>
+    <a href="project.html">Projects</a>
+  </nav>
 </header>
 
 <!-- ================= ABOUT ================= -->
@@ -215,7 +364,7 @@ footer{
         Explore my latest <span style="color:var(--primary)">projects</span>
         showcasing my expertise in React, Android development , Firebase, and Full Stack web development.
       </p>
-      <p style="margin-top:10px;font-size:14px">📍 Gujarat, India</p>
+      <p style="margin-top:10px;font-size:14px">📍 Bihar, India</p>
     </div>
   </div>
 </section>
@@ -234,7 +383,7 @@ footer{
       <div class="timeline-item">
         <h3>Collaborative Developer <span>@Wait-Med Group Project</span></h3>
         <small>3 Months · Remote</small>
-        <p>Built hospital crowd status system using Flutter & Firebase.</p>
+        <p>Built hospital crowd status system using Android & Firebase.</p>
       </div>
     </div>
   </div>
@@ -277,7 +426,7 @@ footer{
 </section>
 
 <footer>
-© 2026 Tannu Waghmare · Built with HTML & CSS
+© 2027 Raj vardhan singh · Built with HTML & CSS
 </footer>
 
 <!-- ================= JS ================= -->
@@ -307,6 +456,108 @@ function reveal(){
 window.addEventListener("scroll",reveal);
 reveal();
 </script>
+
+
+
+
+
+<!-- ================= FLOATING ICON ================= -->
+<div id="message-btn" title="Send Message">✉️</div>
+
+<!-- ================= MODAL ================= -->
+<div id="message-modal">
+  <div class="modal-box">
+    <span class="close-btn" id="closeModal">✖</span>
+
+    <h2>✉️ Send Message</h2>
+
+    <form id="contactForm">
+      <label>Email</label>
+      <input type="email" id="email" required>
+
+      <label>Name</label>
+      <input type="text" id="name" required>
+
+      <label>Subject</label>
+      <input type="text" id="subject" required>
+
+      <label>Message</label>
+      <textarea id="message" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<script>
+const msgBtn = document.getElementById("message-btn");
+const modal = document.getElementById("message-modal");
+const closeBtn = document.getElementById("closeModal");
+
+/* open modal */
+msgBtn.addEventListener("click",()=>{
+  modal.style.display="flex";
+});
+
+/* close modal */
+closeBtn.addEventListener("click",()=>{
+  modal.style.display="none";
+});
+
+/* click outside */
+modal.addEventListener("click",(e)=>{
+  if(e.target===modal){
+    modal.style.display="none";
+  }
+});
+
+/* hide icon near bottom */
+window.addEventListener("scroll",()=>{
+  const nearBottom =
+    window.innerHeight + window.scrollY >= document.body.offsetHeight - 150;
+  msgBtn.style.display = nearBottom ? "none" : "flex";
+});
+
+/* submit → mail */
+document.getElementById("contactForm").addEventListener("submit",function(e){
+  e.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const name = document.getElementById("name").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
+
+  const mailto = `mailto:rvardhan692@rku.ac.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+    "Name: "+name+"\nEmail: "+email+"\n\n"+message
+  )}`;
+
+  document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  // show success toast
+  const toast = document.getElementById("success-toast");
+  toast.style.display = "block";
+
+  // reset form
+  this.reset();
+
+  // close modal
+  modal.style.display = "none";
+
+  // hide toast after 3 seconds
+  setTimeout(()=>{
+    toast.style.display = "none";
+  },3000);
+});
+
+});
+</script>
+
+<!-- Success Toast -->
+<div id="success-toast">✔ Message submitted successfully</div>
+
+
+
 
 </body>
 </html>
