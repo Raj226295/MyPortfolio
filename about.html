@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Raj vardhan singh</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ================= ROOT ================= */
+:root{
+  --primary:#1f8a8a;
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --card:#f8fafc;
+  --border:#e5e7eb;
+  --shadow:0 20px 40px rgba(0,0,0,.08);
+}
+
+/* ================= BASE ================= */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Inter,system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 20px;
+}
+
+/* ================= CURSOR ================= */
+.cursor{
+  position:fixed;
+  width:28px;
+  height:28px;
+  border:2px solid var(--primary);
+  border-radius:50%;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  transition:.15s;
+  z-index:9999;
+}
+
+/* ================= NAVBAR ================= */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  z-index:1000;
+}
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 0;
+}
+.logo{
+  font-weight:700;
+  color:var(--primary);
+}
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:10px;
+}
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  padding:8px 16px;
+  border-radius:20px;
+  transition:.3s;
+}
+nav a.active,
+nav a:hover{
+  background:#e6f6f6;
+  color:var(--primary);
+}
+
+/* ================= REVEAL ================= */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:none;
+}
+
+/* ================= SECTIONS ================= */
+section{
+  padding:140px 0 80px;
+}
+
+/* ================= TITLES ================= */
+.title{
+  font-size:42px;
+  color:var(--primary);
+  margin-bottom:40px;
+}
+
+/* ================= HERO ================= */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+.hero-img{
+  height:280px;
+  background:#e6f6f6;
+  border-radius:20px;
+}
+.hero p{
+  margin-top:20px;
+  color:var(--muted);
+}
+
+/* ================= TIMELINE ================= */
+.timeline{
+  border-left:3px solid var(--primary);
+  padding-left:30px;
+}
+.timeline-item{
+  margin-bottom:40px;
+}
+.timeline-item h3{
+  font-size:18px;
+}
+.timeline-item span{
+  color:var(--primary);
+}
+.timeline-item small{
+  display:block;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+/* ================= CTA ================= */
+.cta{
+  background:var(--primary);
+  color:#fff;
+  border-radius:16px;
+  padding:50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:80px 0;
+}
+.cta a{
+  background:#fff;
+  color:var(--primary);
+  padding:14px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  border-top:1px solid var(--border);
+  padding:30px 0;
+  text-align:center;
+  color:var(--muted);
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr}
+  .title{font-size:34px}
+  .cta{flex-direction:column;gap:20px;text-align:center}
+}
+</style>
+</head>
+
+<body>
+
+<div class="cursor"></div>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">Raj</div>
+      <ul>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="project.html" class="nav-link">Projects</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<!-- ================= ABOUT ================= -->
+<section>
+  <div class="container hero reveal">
+    <div class="hero-img"></div>
+    <div>
+      <h1 class="title">Hi, I'm Raj vardhan singh</h1>
+      <p>
+        am a B.Tech Computer Science student focused on building scalable and efficient digital solutions.
+        I have hands-on experience through academic and class projects using JavaScript, Android development, and Node.js.
+          I enjoy creating reliable applications by combining clean user interfaces with strong backend logic and modern development practices.
+      </p>
+      <p>
+        Explore my latest <span style="color:var(--primary)">projects</span>
+        showcasing my expertise in React, Android development , Firebase, and Full Stack web development.
+      </p>
+      <p style="margin-top:10px;font-size:14px">📍 Gujarat, India</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section>
+  <div class="container">
+    <h2 class="title reveal">Experience</h2>
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <h3>Full Stack Developer <span>@Void-Music Group</span></h3>
+        <small>3 Months · Remote</small>
+        <p>Worked on a music streaming platform using PHP and MySQL.</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Collaborative Developer <span>@Wait-Med Group Project</span></h3>
+        <small>3 Months · Remote</small>
+        <p>Built hospital crowd status system using Flutter & Firebase.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section>
+  <div class="container">
+    <h2 class="title reveal">Education</h2>
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <h3>B.Tech Computer Engineering <span>@RK University</span></h3>
+        <small>2023–2027 · Rajkot</small>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Higher Secondary School <span>@Innovative International School</span></h3>
+        <small>2021–2023 · Gujarat</small>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Secondary School Education <span>@Parimal School</span></h3>
+        <small>2020–2021 · Gujarat</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="container">
+  <div class="cta reveal">
+    <div>
+      <small>AVAILABLE FOR WORK</small>
+      <h2 style="margin:10px 0">Let's talk about<br>the next project.</h2>
+      <p>My inbox is always open!</p>
+      <strong>rvardhan692@rku.ac.in</strong>
+    </div>
+    <a href="mailto:tannuwaghmare15@gmail.com">Send Message</a>
+  </div>
+</section>
+
+<footer>
+© 2026 Tannu Waghmare · Built with HTML & CSS
+</footer>
+
+<!-- ================= JS ================= -->
+<script>
+/* Cursor follow */
+const cursor=document.querySelector(".cursor");
+document.addEventListener("mousemove",e=>{
+  cursor.style.left=e.clientX+"px";
+  cursor.style.top=e.clientY+"px";
+});
+
+/* Cursor react */
+document.querySelectorAll("a,.cta,.hero-img").forEach(el=>{
+  el.addEventListener("mouseenter",()=>cursor.style.transform="translate(-50%,-50%) scale(1.6)");
+  el.addEventListener("mouseleave",()=>cursor.style.transform="translate(-50%,-50%) scale(1)");
+});
+
+/* Reveal */
+const reveals=document.querySelectorAll(".reveal");
+function reveal(){
+  reveals.forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight-100){
+      el.classList.add("active");
+    }
+  });
+}
+window.addEventListener("scroll",reveal);
+reveal();
+</script>
+
+</body>
+</html>
+
