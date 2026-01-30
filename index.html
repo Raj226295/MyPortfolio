@@ -203,38 +203,48 @@ nav a:hover::after{
 /* ================= PROJECTS ================= */
 .projects{
   margin-top:120px;
+  max-width:700px;
 }
 
-.projects h2{
+.projects-title{
+  font-size:36px;
+  color:#0d0e0d;
+  margin-bottom:30px;
+  text-decoration-style: dashed;
+}
+
+/* CLICKABLE CARD */
+.project-card{
+  display:block;
+  text-decoration:none;
+  margin-bottom:28px;
+}
+
+/* 🔥 MAIN FIX — TEXT SIZE HERE */
+.project-name{
+  font-size:32px;          /* ⬅ TEXT BADA */
+  font-weight:600;
   color:#1b8f8f;
-  margin-bottom:25px;
+  line-height:1.4;
 }
 
-.project{
-  margin-bottom:22px;
-}
-
-.project h3{
-  color:#1b8f8f;
-}
-
-.project p{
+/* TAG LINE */
+.project-card p{
+  margin-top:6px;
+  font-size:23px;
   color:#666;
 }
 
-.more{
-  display:inline-block;
-  margin-top:18px;
-  font-size:35px;        /* yahan size bada kiya */
-  color:#1b8f8f;
-  font-weight:600;
-  text-decoration:none;
-  transition:0.3s;
+/* HOVER EFFECT */
+.project-card:hover .project-name{
+  text-decoration:underline;
 }
 
-.more:hover{
+.project-card:hover{
   transform:translateX(6px);
+  transition:0.3s ease;
 }
+
 
 /* ================= CONTACT ================= */
 .contact-box{
@@ -329,6 +339,32 @@ nav a:hover::after{
   justify-content:center;
   z-index:1000;
 }
+
+
+
+
+
+.more{
+  display:inline-block;
+  margin-top:30px;
+
+  font-size:34px;          /* text size */
+  font-weight:500;
+  color:#1b8f8f;           /* same teal color */
+  text-decoration:none;
+
+  transition:0.3s ease;
+}
+
+/* hover effect */
+.more:hover{
+  transform:translateX(8px);   /* arrow move */
+  text-decoration:underline;
+}
+
+
+
+
 
 /* Modal Box (CENTERED) */
 .modal-box{
@@ -776,24 +812,24 @@ document.getElementById("contactForm").addEventListener("submit",function(e){
 
 <!-- PROJECTS -->
 <section class="projects">
-<h2>My Projects</h2>
+  <h2 class="projects-title">My Projects</h2>
 
-<div class="project">
-  <h3>1. HealthCare Management System App</h3>
-  <p>#Android #Kotline #Healthcare #Firebase</p>
-</div>
+  <a href="project.html" class="project-card">
+    <h3 class="project-name">1. HealthCare Management System App</h3>
+    <p>#Android #Kotlin #Healthcare #Firebase</p>
+  </a>
 
-<div class="project">
-  <h3>2. TaskFlow</h3>
-  <p>#PHP #Laravel #Bootstrap #MVC</p>
-</div>
+  <a href="project.html" class="project-card">
+    <h3 class="project-name">2. TaskFlow</h3>
+    <p>#PHP #Laravel #Bootstrap #MVC</p>
+  </a>
 
-<div class="project">
-  <h3>3. Personal Account Book</h3>
-  <p>#.NET #SQL Server #Desktop App</p>
-</div>
+  <a href="project.html" class="project-card">
+    <h3 class="project-name">3. Personal Account Book</h3>
+    <p>#.NET #SQL Server #Desktop App</p>
+  </a>
 
-<a class="more" href="#">See more projects →</a>
+  <a class="more" href="project.html">See more projects →</a>
 </section>
 
 

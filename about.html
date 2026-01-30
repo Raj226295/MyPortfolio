@@ -179,24 +179,242 @@ section{
   color:var(--muted);
 }
 
-/* ================= TIMELINE ================= */
-.timeline{
-  border-left:3px solid var(--primary);
-  padding-left:30px;
+
+
+/* ====================contact=================== */
+
+.contact-box{
+  margin-top:120px;
+  background:#1f8f92;
+  color:#fff;
+  padding:60px 80px;
+  border-radius:22px;
+  width:100%;
 }
-.timeline-item{
-  margin-bottom:40px;
+
+.work-badge{
+  display:inline-block;
+  background:#2aa5a8;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:12px;
+  letter-spacing:0.5px;
 }
-.timeline-item h3{
-  font-size:18px;
+
+.contact-box h2{
+  margin-top:20px;
+  font-size:48px;
+  line-height:1.2;
+  font-weight:700;
 }
-.timeline-item span{
-  color:var(--primary);
+
+.contact-box h2 span{
+  font-weight:400;
+  opacity:0.9;
 }
-.timeline-item small{
+
+.sub-text{
+  margin-top:18px;
+  font-size:16px;
+  opacity:0.9;
+}
+
+.email-link{
   display:block;
-  color:var(--muted);
-  margin-top:4px;
+  margin-top:28px;
+  font-size:18px;
+  color:#fff;
+  text-decoration:underline;
+  font-weight:500;
+}
+
+.mail-btn{
+  display:inline-block;
+  margin-top:18px;
+  background:#fff;
+  color:#1f8f92;
+  padding:10px 22px;
+  border-radius:8px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.mail-btn:hover{
+  background:#e6f7f7;
+}
+
+/* Floating Icon */
+#message-btn{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:55px;
+  height:55px;
+  background:#1f8f92;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  cursor:pointer;
+  z-index:999;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+/* Modal Background */
+#message-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:1000;
+}
+
+/* Modal Box (CENTERED) */
+.modal-box{
+  background:#1f8f92;
+  color:#fff;
+  width:360px;
+  max-width:90%;
+  padding:30px;
+  border-radius:18px;
+  position:relative;
+  animation:scaleIn .25s ease;
+}
+
+@keyframes scaleIn{
+  from{transform:scale(.85);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+.modal-box h2{
+  margin-bottom:18px;
+}
+
+.modal-box label{
+  font-size:13px;
+}
+
+.modal-box input,
+.modal-box textarea{
+  width:100%;
+  margin:6px 0 14px;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+  outline:none;
+}
+
+.modal-box textarea{
+  height:80px;
+  resize:none;
+}
+
+.modal-box button{
+  width:100%;
+  padding:12px;
+  background:#fff;
+  color:#1f8f92;
+  border:none;
+  border-radius:30px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* Close */
+.close-btn{
+  position:absolute;
+  top:14px;
+  right:14px;
+  cursor:pointer;
+}
+/* ================= TIMELINE ================= */
+/* ===== EXPERIENCE & EDUCATION TIMELINE (SCREENSHOT STYLE) ===== */
+
+.section-heading{
+  text-align:center;
+  font-size:56px;
+  font-weight:800;
+  color:#4aa6a6;
+  margin-bottom:80px;
+}
+
+.timeline-new{
+  max-width:720px;
+  margin:0 auto;
+  position:relative;
+  padding-left:70px;
+}
+
+.timeline-new::before{
+  content:"";
+  position:absolute;
+  left:24px;
+  top:0;
+  width:3px;
+  height:100%;
+  background:#4aa6a6;
+  border-radius:2px;
+}
+
+.timeline-card{
+  position:relative;
+  margin-bottom:70px;
+}
+
+.timeline-card::before{
+  content:"";
+  position:absolute;
+  left:-58px;
+  top:6px;
+  width:16px;
+  height:16px;
+  background:#fff;
+  border:3px solid #4aa6a6;
+  border-radius:50%;
+  box-shadow:0 0 0 6px rgba(74,166,166,.18);
+}
+
+.timeline-card h3{
+  font-size:17px;
+  font-weight:600;
+}
+
+.timeline-card h3 span{
+  color:#4aa6a6;
+}
+
+.timeline-card small{
+  display:block;
+  margin:6px 0 10px;
+  font-size:13px;
+  color:#666;
+}
+
+.timeline-card p{
+  font-size:14px;
+  color:#555;
+  line-height:1.6;
+}
+
+.timeline-card:hover::before{
+  box-shadow:0 0 0 10px rgba(74,166,166,.28);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .section-heading{
+    font-size:40px;
+  }
+  .timeline-new{
+    padding-left:50px;
+  }
 }
 
 /* ================= CTA ================= */
@@ -626,48 +844,80 @@ canvas {
   </div>
 </section>
 
-<!-- ================= EXPERIENCE ================= -->
 <section>
-  <div class="container">
-    <h2 class="title reveal">Experience</h2>
-    <div class="timeline reveal">
-      <div class="timeline-item">
-        <h3>Full Stack Developer <span>@Void-Music Group</span></h3>
-        <small>3 Months · Remote</small>
-        <p>Worked on a music streaming platform using PHP and MySQL.</p>
-      </div>
+  <h2 class="section-heading">Experience</h2>
 
-      <div class="timeline-item">
-        <h3>Collaborative Developer <span>@Wait-Med Group Project</span></h3>
-        <small>3 Months · Remote</small>
-        <p>Built hospital crowd status system using Android & Firebase.</p>
-      </div>
+  <div class="timeline-new reveal">
+
+    <div class="timeline-card">
+      <h3>
+        Full Stack Developer <span>@Void-Music Group Project</span>
+      </h3>
+      <small>3 Months | Remote</small>
+      <p>
+        Worked in a team environment to build a music streaming platform
+        using PHP and MySQL.
+      </p>
     </div>
+
+    <div class="timeline-card">
+      <h3>
+        Collaborative Developer <span>@Wait-Med Group Project</span>
+      </h3>
+      <small>3 Months | Remote</small>
+      <p>
+        Worked on a hospital crowd status system using Android and Firebase.
+        Handled database optimization and backend integration.
+      </p>
+    </div>
+
   </div>
 </section>
 
-<!-- ================= EDUCATION ================= -->
+
 <section>
-  <div class="container">
-    <h2 class="title reveal">Education</h2>
-    <div class="timeline reveal">
-      <div class="timeline-item">
-        <h3>B.Tech Computer Engineering <span>@RK University</span></h3>
-        <small>2023–2027 · Rajkot</small>
-      </div>
+  <h2 class="section-heading">Education</h2>
 
-      <div class="timeline-item">
-        <h3>Higher Secondary School <span>@Innovative International School</span></h3>
-        <small>2021–2023 · Gujarat</small>
-      </div>
+  <div class="timeline-new reveal">
 
-      <div class="timeline-item">
-        <h3>Secondary School Education <span>@Parimal School</span></h3>
-        <small>2020–2021 · Gujarat</small>
-      </div>
+    <div class="timeline-card">
+      <h3>
+        Bachelor of Technology in Computer Engineering
+        <span>@RK University</span>
+      </h3>
+      <small>2023–2027 | Rajkot, Gujarat</small>
+      <p>
+        Relevant coursework includes Data Structures, Web Development,
+        Cloud Computing, Artificial Neural Networks and Database Management.
+      </p>
     </div>
+
+    <div class="timeline-card">
+      <h3>
+        Higher Secondary School
+        <span>@Innovative International School</span>
+      </h3>
+      <small>2021–2023 | Gujarat</small>
+      <p>
+        Learned team collaboration, participated in different sports
+        and developed leadership skills.
+      </p>
+    </div>
+
+    <div class="timeline-card">
+      <h3>
+        Secondary School Education
+        <span>@Parimal School</span>
+      </h3>
+      <small>2020–2021 | Gujarat</small>
+      <p>
+        Learned discipline, dedication and strong academic fundamentals.
+      </p>
+    </div>
+
   </div>
 </section>
+
 
 <!-- ================= CTA ================= -->
 <section class="container">
@@ -682,9 +932,6 @@ canvas {
   </div>
 </section>
 
-<footer>
-© 2027 Raj vardhan singh · Built with HTML & CSS
-</footer>
 
 <!-- ================= JS ================= -->
 <script>
@@ -815,6 +1062,36 @@ document.getElementById("contactForm").addEventListener("submit",function(e){
 
 
 
+
+
+
+<section class="contact-box">
+  <span class="work-badge">AVAILABLE FOR WORK</span>
+
+  <h2>
+    Let's talk about<br>
+    <span>the next project.</span>
+  </h2>
+
+  <p class="sub-text">
+    I'm currently looking for new opportunities.
+    My inbox is always open!
+  </p>
+
+  <a href="mailto:rvardhan692@rku.ac.in" class="email-link">
+    rvardhan692@rku.ac.in
+  </a>
+  <a href="mailto:rvardhan692@rku.ac.in?subject=Portfolio Inquiry&body=Hello Raj,%0D%0A%0D%0AI saw your portfolio and would like to connect with you.%0D%0A%0D%0ARegards,"
+  class="mail-btn">
+  Send Message
+</a>
+
+</section>
+
+<footer>
+  © 2027 Raj vardhan singh · Built with HTML & CSS
+  </footer>
+  
 
 </body>
 </html>
