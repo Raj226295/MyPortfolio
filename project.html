@@ -137,37 +137,49 @@ h1{
   margin-bottom:40px;
 }
 
-/* ================= PROJECT GRID ================= */
+/* ===== PROJECTS SECTION ===== */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:120px 20px;
+}
+
+/* GRID = CARD KE BEECH GAP */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(420px, 1fr));
+  gap:40px;                 /* 🔥 YAHI CARD GAP HAI */
+}
+
 /* ===== PROJECT CARD ===== */
 .project-card{
   background:#fff;
-  border-radius:14px;
+  border-radius:16px;
   overflow:hidden;
   box-shadow:0 18px 40px rgba(0,0,0,0.12);
-  transition:.4s ease;
+  transition:.35s ease;
 }
 
 .project-card:hover{
-  transform:translateY(-12px);
-  box-shadow:0 30px 60px rgba(27,143,143,.25);
+  transform:translateY(-10px);
+  box-shadow:0 28px 60px rgba(27,143,143,.25);
 }
 
-/* ===== TOP DARK AREA ===== */
+/* ===== TOP DARK CODE AREA ===== */
 .project-preview{
   background:linear-gradient(135deg,#0f172a,#020617);
   padding:28px;
-  position:relative;
 }
 
-/* INNER CODE WINDOW */
+/* CODE WINDOW */
 .code-window{
   background:#1e293b;
-  border-radius:10px;
-  padding:18px 20px;
+  border-radius:12px;
+  padding:18px 22px;
   color:#cbd5e1;
   font-size:13px;
   font-family:"Fira Code", monospace;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);
 }
 
 .code-window pre{
@@ -175,7 +187,7 @@ h1{
   white-space:pre-wrap;
 }
 
-/* DOT NAV */
+/* DOTS */
 .code-nav{
   display:flex;
   justify-content:center;
@@ -194,15 +206,14 @@ h1{
   background:#1b8f8f;
 }
 
-/* ===== BOTTOM WHITE INFO ===== */
+/* ===== INFO AREA ===== */
 .project-info{
-  padding:20px 22px;
+  padding:22px 24px;
 }
 
 .project-title{
-  font-size:16px;
+  font-size:17px;
   font-weight:600;
-  color:#111;
   display:flex;
   align-items:center;
   gap:8px;
@@ -213,16 +224,16 @@ h1{
 }
 
 .project-desc{
+  margin-top:6px;
   font-size:14px;
   color:#555;
-  margin-top:6px;
 }
 
 /* FOOTER */
 .project-footer{
+  margin-top:14px;
   display:flex;
   justify-content:flex-end;
-  margin-top:14px;
 }
 
 .project-footer a{
@@ -238,12 +249,12 @@ h1{
   color:#1b8f8f;
 }
 
-
-.projects{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(420px, 1fr));
-  gap:40px;               /* 👈 YAHI CARD GAP HAI */
-  margin-top:40px;
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .projects{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
 }
 
 
@@ -285,12 +296,52 @@ h1{
 }
 
 /* ================= FOOTER ================= */
-footer{
-  text-align:center;
-  font-size:13px;
-  color:var(--muted);
-  margin:40px 0 20px;
+/* ===== FOOTER ===== */
+.site-footer{
+  margin-top:80px;
+  padding:24px 0;
+  border-top:1px solid #e5e7eb;
 }
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.footer-text{
+  font-size:13px;
+  color:#6b7280;
+}
+
+/* SOCIAL ICONS */
+.social-links{
+  display:flex;
+  gap:18px;
+}
+
+.social-links a{
+  color:#111827;
+  font-size:18px;
+  transition:0.3s ease;
+}
+
+.social-links a:hover{
+  color:#1b8f8f;
+  transform:translateY(-2px);
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .footer-inner{
+    flex-direction:column;
+    gap:12px;
+  }
+}
+
 
 /* ================= RESPONSIVE ================= */
 @media(max-width:768px){
@@ -831,11 +882,16 @@ canvas {
   </nav>
 </header>
 
-<section>
-<div class="project-card">
+<section class="container">
 
-  <div class="project-preview">
-    <div class="code-window">
+  <!-- 👇 GRID WRAPPER (GAP YAHIN SE AATA HAI) -->
+  <div class="projects">
+
+    <!-- ================= PROJECT 1 ================= -->
+    <div class="project-card">
+
+      <div class="project-preview">
+        <div class="code-window">
 <pre><code>
 GetPage(
   name: '/submit',
@@ -846,33 +902,32 @@ GetPage(
   ),
 );
 </code></pre>
+        </div>
+        <div class="code-nav">
+          <span></span><span class="active"></span><span></span>
+        </div>
+      </div>
+
+      <div class="project-info">
+        <div class="project-title">
+          <span class="triangle">▲</span> WaitMed App
+        </div>
+        <p class="project-desc">A healthcare-tech solution.</p>
+
+        <div class="project-footer">
+          <a href="https://github.com/yourusername/waitmed" target="_blank">
+            <i class="fab fa-github"></i> Source code
+          </a>
+        </div>
+      </div>
+
     </div>
-    <div class="code-nav">
-      <span></span><span class="active"></span><span></span>
-    </div>
-  </div>
 
-  <div class="project-info">
-    <div class="project-title">
-      <span class="triangle">▲</span> WaitMed App
-    </div>
-    <p class="project-desc">A healthcare-tech solution.</p>
+    <!-- ================= PROJECT 2 ================= -->
+    <div class="project-card">
 
-    <div class="project-footer">
-      <a href="https://github.com/yourusername/waitmed" target="_blank">
-        <i class="fab fa-github"></i> Source code
-      </a>
-    </div>
-  </div>
-
-</div>
-
-
-
-<div class="project-card">
-
-  <div class="project-preview">
-    <div class="code-window">
+      <div class="project-preview">
+        <div class="code-window">
 <pre><code>
 @if(session('error'))
   <div class="alert alert-danger">
@@ -880,64 +935,63 @@ GetPage(
   </div>
 @endif
 </code></pre>
+        </div>
+        <div class="code-nav">
+          <span></span><span class="active"></span><span></span>
+        </div>
+      </div>
+
+      <div class="project-info">
+        <div class="project-title">
+          <span class="triangle">▲</span> TaskFlow
+        </div>
+        <p class="project-desc">Task management system.</p>
+
+        <div class="project-footer">
+          <a href="https://github.com/yourusername/taskflow" target="_blank">
+            <i class="fab fa-github"></i> Source code
+          </a>
+        </div>
+      </div>
+
     </div>
-    <div class="code-nav">
-      <span></span><span class="active"></span><span></span>
-    </div>
-  </div>
 
-  <div class="project-info">
-    <div class="project-title">
-      <span class="triangle">▲</span> TaskFlow
-    </div>
-    <p class="project-desc">Task management system.</p>
+    <!-- ================= PROJECT 3 ================= -->
+    <div class="project-card">
 
-    <div class="project-footer">
-      <a href="https://github.com/yourusername/taskflow" target="_blank">
-        <i class="fab fa-github"></i> Source code
-      </a>
-    </div>
-  </div>
-
-</div>
-
-
-
-<div class="project-card">
-
-  <div class="project-preview">
-    <div class="code-window">
+      <div class="project-preview">
+        <div class="code-window">
 <pre><code>
 private void InitializeUI() {
   SetupDashboard();
   UpdateDataGrid();
 }
 </code></pre>
+        </div>
+        <div class="code-nav">
+          <span></span><span class="active"></span><span></span>
+        </div>
+      </div>
+
+      <div class="project-info">
+        <div class="project-title">
+          <span class="triangle">▲</span> Personal Account Book
+        </div>
+        <p class="project-desc">
+          Desktop-based financial tracking system.
+        </p>
+
+        <div class="project-footer">
+          <a href="https://github.com/yourusername/account-book" target="_blank">
+            <i class="fab fa-github"></i> Source code
+          </a>
+        </div>
+      </div>
+
     </div>
-    <div class="code-nav">
-      <span></span><span class="active"></span><span></span>
-    </div>
+
   </div>
-
-  <div class="project-info">
-    <div class="project-title">
-      <span class="triangle">▲</span> Personal Account Book
-    </div>
-    <p class="project-desc">
-      Desktop-based financial tracking system.
-    </p>
-
-    <div class="project-footer">
-      <a href="https://github.com/yourusername/account-book" target="_blank">
-        <i class="fab fa-github"></i> Source code
-      </a>
-    </div>
-  </div>
-
-</div>
-
 </section>
-
 
 
 
@@ -1115,10 +1169,26 @@ reveal();
 </section>
 
 
-<footer>
-  © 2026 Tannu Waghmare · Built with HTML & CSS
-  </footer>
-  
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <p class="footer-text">
+      © 2026 Tannu Waghmare · Built with HTML & CSS
+    </p>
+
+    <div class="social-links">
+      <a href="https://github.com/Raj226295" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/raj-vardhan-singh-89178431a/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+
+  </div>
+</footer>
+
 
 </body>
 </html>

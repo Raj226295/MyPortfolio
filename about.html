@@ -7,6 +7,7 @@
 
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 /* ================= ROOT ================= */
@@ -437,15 +438,6 @@ section{
   font-weight:600;
 }
 
-/* ================= FOOTER ================= */
-footer{
-  border-top:1px solid var(--border);
-  padding:30px 0;
-  text-align:center;
-  color:var(--muted);
-  position: relative;
-  z-index: 2;
-}
 
 /* ================= RESPONSIVE ================= */
 @media(max-width:768px){
@@ -455,6 +447,53 @@ footer{
 }
 
 
+
+
+/* ===== FOOTER ===== */
+.site-footer{
+  margin-top:80px;
+  padding:24px 0;
+  border-top:1px solid #e5e7eb;
+}
+
+.footer-inner{
+  max-width:1200px;
+  margin:auto;
+  padding:0 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.footer-text{
+  font-size:13px;
+  color:#6b7280;
+}
+
+/* SOCIAL ICONS */
+.social-links{
+  display:flex;
+  gap:18px;
+}
+
+.social-links a{
+  color:#111827;
+  font-size:18px;
+  transition:0.3s ease;
+}
+
+.social-links a:hover{
+  color:#1b8f8f;
+  transform:translateY(-2px);
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .footer-inner{
+    flex-direction:column;
+    gap:12px;
+  }
+}
 
 
 
@@ -1088,9 +1127,25 @@ document.getElementById("contactForm").addEventListener("submit",function(e){
 
 </section>
 
-<footer>
-  © 2027 Raj vardhan singh · Built with HTML & CSS
-  </footer>
+<footer class="site-footer">
+  <div class="footer-inner">
+
+    <p class="footer-text">
+      © 2026 Tannu Waghmare · Built with HTML & CSS
+    </p>
+
+    <div class="social-links">
+      <a href="https://github.com/Raj226295" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/raj-vardhan-singh-89178431a/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+
+  </div>
+</footer>
   
 
 </body>
