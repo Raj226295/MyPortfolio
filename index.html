@@ -723,11 +723,7 @@ canvas {
       pointer-events: none;
       z-index: 0; 
     }
-    @media (max-width: 768px){
-  canvas{
-    display:none;
-  }
-}
+   
 
 </style>
 </head>
@@ -868,9 +864,16 @@ canvas {
     }
 
     function onMove(e) {
-      pos.x = e.clientX;
-      pos.y = e.clientY;
-    }
+  if (e.touches) {
+    // 📱 Mobile touch
+    pos.x = e.touches[0].clientX;
+    pos.y = e.touches[0].clientY;
+  } else {
+    // 💻 Desktop mouse
+    pos.x = e.clientX;
+    pos.y = e.clientY;
+  }
+}
 
     function render() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -890,6 +893,8 @@ canvas {
     /* ================= EVENTS ================= */
     window.addEventListener("mousemove", onMove);
     window.addEventListener("resize", resizeCanvas);
+    window.addEventListener("touchstart", onMove);   // mobile
+window.addEventListener("touchmove", onMove);  
 
     resizeCanvas();
     createLines();
