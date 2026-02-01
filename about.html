@@ -9,6 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+
+
+
 <style>
 /* ================= ROOT ================= */
 
@@ -263,6 +266,151 @@ section{
   font-size:12px;
   letter-spacing:0.5px;
 }
+
+
+
+
+/* =========================================================
+   🔥 RESPONSIVE CSS (MOBILE & TABLET FRIENDLY)
+   Paste this at the END of your <style> section
+========================================================= */
+
+@media (max-width: 768px){
+
+/* ===== BODY & LAYOUT ===== */
+body{
+  padding:20px 16px;
+}
+
+header{
+  flex-direction:column;
+  gap:14px;
+}
+
+/* ===== LOGO ===== */
+.liquid-text{
+  font-size:28px;
+  letter-spacing:3px;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+  padding:8px 14px;
+}
+
+nav a{
+  font-size:13px;
+  margin:0 6px;
+}
+
+/* ===== HERO SECTION ===== */
+.hero{
+  margin-top:60px;
+  max-width:100%;
+}
+
+.hero h1{
+  font-size:34px;
+  line-height:1.2;
+}
+
+.hero h3{
+  font-size:18px;
+}
+
+.hero p{
+  font-size:15px;
+}
+
+/* ===== SKILLS SECTION ===== */
+.skills-section h2{
+  font-size:28px;
+}
+
+.skill-card{
+  min-width:150px;
+  padding:14px 16px;
+  font-size:14px;
+}
+
+/* ===== PROJECT LIST (HOME PAGE) ===== */
+.projects{
+  margin-top:80px;
+  max-width:100%;
+}
+
+.projects-title{
+  font-size:28px;
+}
+
+.project-name{
+  font-size:22px;
+}
+
+.project-card p{
+  font-size:14px;
+  line-height:1.5;
+}
+
+.more{
+  font-size:20px;
+}
+
+/* ===== PROJECT GRID PAGE (project.html) ===== */
+.projects{
+  grid-template-columns:1fr;
+  gap:26px;
+}
+
+.project-preview{
+  padding:16px;
+}
+
+.project-desc{
+  font-size:14px;
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-box{
+  padding:30px 20px;
+  border-radius:16px;
+}
+
+.contact-box h2{
+  font-size:30px;
+}
+
+.email-link{
+  font-size:16px;
+}
+
+/* ===== FOOTER ===== */
+.footer-inner{
+  flex-direction:column;
+  gap:12px;
+  text-align:center;
+}
+
+/* ===== FLOATING MESSAGE BUTTON ===== */
+#message-btn{
+  width:48px;
+  height:48px;
+  font-size:20px;
+}
+
+/* ===== CANVAS CURSOR (DISABLE ON MOBILE) ===== */
+canvas{
+  display:none;
+}
+}
+
+/* =========================================================
+ ✅ END RESPONSIVE CSS
+========================================================= */
+
+
+
+
 
 .contact-box h2{
   margin-top:20px;
@@ -1101,6 +1249,49 @@ reveal();
 </script>
 
 
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("joyp6EyilEPKmLYKB");  
+  })();
+  </script>
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e){
+      e.preventDefault();
+    
+      const params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value
+      };
+    
+      emailjs.send(
+        "service_w9faj7o",   // 🔁 EmailJS Service ID
+        "template_unr9qx6",    // 🔁 EmailJS Template ID
+        params
+      ).then(() => {
+    
+        // ✅ SUCCESS
+        document.getElementById("success-toast").style.display = "block";
+        document.getElementById("contactForm").reset();
+        document.getElementById("message-modal").style.display = "none";
+    
+        setTimeout(()=>{
+          document.getElementById("success-toast").style.display = "none";
+        },3000);
+    
+      }, (error) => {
+        alert("Message send failed ❌");
+        console.log(error);
+      });
+    });
+    </script>
+
+
+
+
+
 
 
 
@@ -1231,7 +1422,7 @@ document.getElementById("contactForm").addEventListener("submit",function(e){
   <div class="footer-inner">
 
     <p class="footer-text">
-      © 2026 Tannu Waghmare · Built with HTML & CSS
+      © 2026 Raj vardhan singh · Built with HTML & CSS
     </p>
 
     <div class="social-links">
