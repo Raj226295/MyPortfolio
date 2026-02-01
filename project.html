@@ -5,7 +5,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Projects | Portfolio</title>
-
+<link rel="icon" href="portfolio.png">
 <!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -30,7 +30,13 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:transparent;
+  padding:10px 0;
 }
+
 
 .liquid-text{
   font-size:36px;
@@ -916,6 +922,13 @@ canvas {
       pointer-events: none;
       z-index: 0;
     }
+
+
+    @media (max-width: 768px){
+  canvas{
+    display:none;
+  }
+}
 </style>
 </head>
 
@@ -1269,7 +1282,7 @@ canvas {
     </p>
 
     <div class="project-footer">
-      <a href="https://github.com/Raj226295/hand-tracked-3d-particles" target="_blank">
+      <a href="https://github.com/Raj226295/hand-tracked-3d-particles-" target="_blank">
         <i class="fab fa-github"></i> Source code
       </a>
     </div>

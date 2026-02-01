@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About | Raj vardhan singh</title>
-
+<link rel="icon" href="portfolio.png">
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -35,7 +35,13 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:transparent;
+  padding:10px 0;
 }
+
 
 .liquid-text{
   font-size:36px;
@@ -190,7 +196,7 @@ body.dark .social-links a:hover{
 
 /* ================= SECTIONS ================= */
 section{
-  padding:140px 0 80px;
+  padding:100px 0 80px;
 }
 
 /* ================= TITLES ================= */
@@ -245,7 +251,26 @@ section{
   color:var(--muted);
 }
 
+@media (max-width: 768px){
+  section{
+    padding-top:120px;
+  }
 
+  .hero{
+    margin-top:40px;
+  }
+
+  .hero-img{
+    margin-top:20px;
+  }
+}
+
+
+.hero-img img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
 
 /* ====================contact=================== */
 
@@ -893,7 +918,11 @@ canvas {
   pointer-events: none;
   z-index: 1;        /* 👈 background */
 }
-
+@media (max-width: 768px){
+  canvas{
+    display:none;
+  }
+}
 </style>
 </head>
 
@@ -1138,24 +1167,26 @@ canvas {
 
     <div class="timeline-card">
       <h3>
-        Full Stack Developer <span>@Void-Music Group Project</span>
+        Full Stack Developer <span>@Auto-Home Automation</span>
       </h3>
-      <small>3 Months | Remote</small>
+      <small>College Project </small>
       <p>
-        Worked in a team environment to build a music streaming platform
-        using PHP and MySQL.
+        Developed an Auto Home Automation system using Python to control and
+        monitor home appliances efficiently, improving comfort and energy
+        management.
       </p>
     </div>
 
     <div class="timeline-card">
       <h3>
-        Collaborative Developer <span>@Wait-Med Group Project</span>
+        Chatbot Developer <span>@SIH (Smart India Hackathon) Project</span>
       </h3>
-      <small>3 Months | Remote</small>
+      <small>Hackathon Project | Team Based</small>
       <p>
-        Worked on a hospital crowd status system using Android and Firebase.
-        Handled database optimization and backend integration.
+        Built a chatbot during Smart India Hackathon (SIH) to automate user queries
+        and improve response efficiency using a team-based approach.
       </p>
+      
     </div>
 
   </div>
@@ -1182,9 +1213,9 @@ canvas {
     <div class="timeline-card">
       <h3>
         Higher Secondary School
-        <span>@Innovative International School</span>
+        <span>@Ml Arya college</span>
       </h3>
-      <small>2021–2023 | Gujarat</small>
+      <small>2020–2022 | Bihar</small>
       <p>
         Learned team collaboration, participated in different sports
         and developed leadership skills.
@@ -1194,9 +1225,9 @@ canvas {
     <div class="timeline-card">
       <h3>
         Secondary School Education
-        <span>@Parimal School</span>
+        <span>@Sr DAV public school</span>
       </h3>
-      <small>2020–2021 | Gujarat</small>
+      <small>2019-2020 | Bihar</small>
       <p>
         Learned discipline, dedication and strong academic fundamentals.
       </p>
